@@ -2,7 +2,7 @@
   package = "@netlify/plugin-nextjs"
 
 [functions]
-  directory = "api/functions/"
+  directory = "./api/functions/"
 
 [dev]
   command = "npm run dev -- --port 3001" # Command to start your dev server
