@@ -7,7 +7,7 @@ export default function Cart() {
   const [showProducts, setShowProducts] = useState(true);
   const [products, setProducts] = useState([]);
   const [cost, setCost] = useState({});
-  const { cartId, setCartId } = useAppContext();
+  const { cartId, setCartId, setCartCount } = useAppContext();
 
   useEffect(async () => {
     const localCart = cartId;
@@ -29,6 +29,7 @@ export default function Cart() {
       return json;
     }
   }, []);
+
 
   return (
     <div>

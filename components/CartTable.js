@@ -1,6 +1,9 @@
 import { formatPrice, itemTotal } from "../utilityFunctions";
+import { useAppContext } from "state";
 
 export default function CartTable({ cartItems, cartId, removeItem }) {
+  const { cartCount, setCartCount } = useAppContext();
+
   let removeItemFromCart = (itemId) => {
     fetch("/.netlify/functions/remove-from-cart", {
       method: "POST",
@@ -14,6 +17,11 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
         console.log("--- Item deleted ---");
 
         removeItem(response.lines.edges);
+        let tempCartCount = 0;
+        response?.lines?.edges.forEach((edge) => {
+          tempCartCount = tempCartCount + edge.node.quantity;
+        });
+        setCartCount(tempCartCount);
         return response;
       });
   };
