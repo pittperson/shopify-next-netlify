@@ -1,6 +1,10 @@
-import Link from 'next/link';
+import { useAppContext } from "state";
+
+import Link from "next/link";
 
 export default function Header() {
+  const { cartCount } = useAppContext();
+
   return (
     <header className="app-header">
       <h1>
@@ -22,7 +26,7 @@ export default function Header() {
           </li>
           <li className="main-nav-item">
             <Link href="/cart">
-              <a className="cart cartLink">Shopping Cart</a>
+              <a className="cart cartLink">Shopping Cart ({cartCount})</a>
             </Link>
           </li>
         </ul>

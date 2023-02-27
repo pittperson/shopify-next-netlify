@@ -55,7 +55,7 @@ export default function ProductPageContent({ product }) {
   // Cost of the chosen variant
   const [cost, setCost] = useState("");
 
-  const { cartId, setCartId } = useAppContext();
+  const { cartId, setCartId, cartCount, setCartCount } = useAppContext();
 
   useEffect(() => {
     let variantPrice = getCurrentVariantObject(vars, chosenVariant).node.priceV2
@@ -74,6 +74,8 @@ export default function ProductPageContent({ product }) {
       itemId: chosenVariant,
       quantity: quantity,
     };
+
+    setCartCount(cartCount + quantity);
 
     const cartResponse = await fetch("/.netlify/functions/add-to-cart", {
       method: "post",
