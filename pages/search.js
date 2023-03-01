@@ -7,7 +7,7 @@ import algoliasearch from "algoliasearch/lite";
 
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-hooks-web";
 
-import HitList from "@components/HitList";
+import { getProductList } from "@api/getProductList";
 
 const searchClient = algoliasearch(
   "O5MF3054LQ",
@@ -15,9 +15,8 @@ const searchClient = algoliasearch(
 );
 
 function Hit({ hit }) {
-  console.log({ hit });
   return (
-    <li className="product-card">
+    <div className="product-card">
       <div className="product-card-frame">
         <img className="prodimg" src={hit.image} alt={hit.handle} />
       </div>
@@ -28,7 +27,7 @@ function Hit({ hit }) {
           </a>
         </Link>
       </div>
-    </li>
+    </div>
   );
 }
 
