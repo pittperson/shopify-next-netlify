@@ -13,6 +13,7 @@ exports.getProductList = async () => {
                 description
                 title
                 totalInventory
+                productType
                 variants(first: 5) {
                   edges {
                     node {

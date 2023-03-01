@@ -21,6 +21,7 @@ function Hit({ hit }) {
         <img className="prodimg" src={hit.image} alt={hit.handle} />
       </div>
       <div className="product-card-text">
+        <div style={{ fontSize: "9pt" }}>{hit.product_type}</div>
         <Link href={`/product/${hit.handle}`}>
           <a>
             <h3 className="product-card-title">{hit.title}</h3>
