@@ -9,7 +9,7 @@ export default function Header() {
     <header className="app-header">
       <h1>
         <Link href="/">
-          <a>Washaroni</a>
+          <a>Workaroni</a>
         </Link>
       </h1>
       <nav className="main-nav">
