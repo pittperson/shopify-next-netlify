@@ -3,11 +3,7 @@ export default function Footer() {
     <>
       <footer>
         <section className="testimonial">
-          <h2>
-            "The interplay of flavors between the cheese, meats and fruits is an
-            absolute delight."
-          </h2>
-          <p>Paul Hotcakes</p>
+          <h2>THE WORLD’S MOST TRUSTED FITNESS BRANDS</h2>
         </section>
         <section className="app-footer-links">
           <ul>

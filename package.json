@@ -13,6 +13,7 @@
     "next": "^11.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-instantsearch-dom": "^6.39.0",
     "react-instantsearch-hooks-web": "^6.40.1"
   },
   "devDependencies": {

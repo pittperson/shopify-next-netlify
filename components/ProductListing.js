@@ -8,16 +8,12 @@ export default function ProductListing({ product }) {
         <img className="prodimg" src={image.src} alt={image.altText} />
       </div>
       <div className="product-card-text">
-        <h3 className="product-card-title">{product.title}</h3>
-        <p className="product-card-description">
-          {product.description.substring(0, 60)}...
-        </p>
+        <Link href={`/product/${product.handle}`}>
+          <a>
+            <h3 className="product-card-title">{product.title}</h3>
+          </a>
+        </Link>
       </div>
-      <Link href={`/product/${product.handle}`}>
-        <a>
-          <button>View Item {`>`} </button>
-        </a>
-      </Link>
     </li>
   );
 }

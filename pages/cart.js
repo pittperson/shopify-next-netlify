@@ -5,6 +5,7 @@ import Cart from '@components/Cart';
 import { useAppContext } from '../state';
 
 export default function CartPage() {
+  console.log("test");
   return (
     <>
       <Head>

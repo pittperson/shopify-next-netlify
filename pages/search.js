@@ -1,52 +1,53 @@
 import React from "react";
 import Header from "@components/Header";
 import Footer from "@components/Footer";
+import Link from "next/link";
 
 import algoliasearch from "algoliasearch/lite";
-import { Hit as AlgoliaHit } from "instantsearch.js";
 
-import {
-  InstantSearch,
-  Hits,
-  SearchBox,
-  Highlight,
-  RefinementList,
-  DynamicWidgets,
-} from "react-instantsearch-hooks-web";
+import { InstantSearch, SearchBox, Hits } from "react-instantsearch-hooks-web";
 
-const client = algoliasearch("O5MF3054LQ", "10fe1701dc1aad45b62c2615eb8ad521");
+import { getProductList } from "@api/getProductList";
+
+const searchClient = algoliasearch(
+  "O5MF3054LQ",
+  "10fe1701dc1aad45b62c2615eb8ad521"
+);
 
 function Hit({ hit }) {
-  console.log({ hit });
   return (
-    <>
-      {/* <Highlight hit={hit} attribute="name" className="Hit-label" /> */}
-      <div className="Container">
-        <div>
-          <span className="Hit-price">{hit.title}</span>
-        </div>
+    <div className="product-card">
+      <div className="product-card-frame">
+        <img className="prodimg" src={hit.image} alt={hit.handle} />
       </div>
-    </>
+      <div className="product-card-text">
+        <Link href={`/product/${hit.handle}`}>
+          <a>
+            <h3 className="product-card-title">{hit.title}</h3>
+          </a>
+        </Link>
+      </div>
+    </div>
   );
 }
 
 export default function Search() {
   return (
-    <div className="app-header">
+    <>
       <Header />
-      <InstantSearch searchClient={client} indexName="shopify_products">
-        <div className="Container">
-          <div>
-            <SearchBox />
-            <Hits hitComponent={Hit} />
-          </div>
+
+      <InstantSearch searchClient={searchClient} indexName="shopify_products">
+        <div className="search-box">
+          <SearchBox />
+        </div>
+        <div id="hits">
+          <Hits hitComponent={Hit} />
         </div>
       </InstantSearch>
-      <main>
-        <ul className="product-grid"></ul>
-      </main>
 
-      <Footer />
-    </div>
+      <div style={{ width: "100%" }}>
+        <Footer />
+      </div>
+    </>
   );
 }

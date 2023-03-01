@@ -149,10 +149,22 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: #fff;
+  color: #000;
 }
 .testimonial h2 {
+  width: 100%;
+    opacity: .8;
   padding: 0 30px;
+  background-color: #fff;
+    text-align: center;
+  }
+  
+  .testimonial p {
+    opacity: .8;
+    margin-top: 0px;
+    width: 100%;
+    padding: 0 30px;
+    background-color: #fff;
   text-align: center;
 }
 .project-credit {
@@ -355,15 +367,16 @@ main {
   display: flex;
   align-content: center;
   align-items: center;
-  border-radius: 10px;
   overflow: hidden;
+
 }
 .product-card-frame img {
   width: 100%;
-  border-radius: 10px;
   -o-object-fit: cover;
   object-fit: cover;
   height: 100%;
+  border-bottom: 1px solid gray;
+    padding-bottom: 10px;
 }
 .product-card-text {
   margin: 0.5rem 0;
@@ -371,4 +384,24 @@ main {
 .product-card-title {
   margin: 0.5rem 0;
   font-weight: 700;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 10pt;
+  }
+  
+  #hits .ais-Hits-list {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 50%;
+    margin: auto;
+    gap: 20px 20px;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#hits.list .ais-Hits-list {}
+
+.search-box {
+  width: 50%;
+  margin: 30px auto 30px auto;
 }
