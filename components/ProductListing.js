@@ -8,6 +8,7 @@ export default function ProductListing({ product }) {
         <img className="prodimg" src={image.src} alt={image.altText} />
       </div>
       <div className="product-card-text">
+        <div style={{ fontSize: "9pt" }}>{product.productType}</div>
         <Link href={`/product/${product.handle}`}>
           <a>
             <h3 className="product-card-title">{product.title}</h3>
