@@ -6,7 +6,7 @@ export default function Header() {
   const { cartCount } = useAppContext();
 
   return (
-    <header className="app-header" style={{ backgroundColor: "red" }}>
+    <header className="app-header">
       <h1>
         <Link href="/">
           <a>Workaroni</a>
