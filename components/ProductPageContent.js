@@ -75,6 +75,7 @@ export default function ProductPageContent({ product }) {
       quantity: quantity,
     };
 
+    // Update cartCount
     setCartCount(cartCount + quantity);
 
     const cartResponse = await fetch("/.netlify/functions/add-to-cart", {

@@ -1,4 +1,7 @@
-import { useState, createContext, useContext } from 'react';
+// Context provider:
+// Handles cartId and cartItemCount
+
+import { useState, createContext, useContext } from "react";
 
 const AppContext = createContext();
 

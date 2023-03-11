@@ -1,5 +1,7 @@
-import { AppWrapper } from '../state.js'; // import based on where you put it
-import '@styles/globals.css';
+// AppWrapper (i.e. ../state.js) is imported and wraps <Component />
+
+import { AppWrapper } from "../state.js"; // import based on where you put it
+import "@styles/globals.css";
 
 export function Application({ Component, pageProps }) {
   return (

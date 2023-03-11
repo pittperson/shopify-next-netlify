@@ -1,3 +1,7 @@
+// Algolia is attached to Shopify
+// Algolia react hooks are used to build search UI
+// All products are shown at load and filtered out based on search text
+
 import React from "react";
 import Header from "@components/Header";
 import Footer from "@components/Footer";

@@ -21,6 +21,8 @@ export default function CartTable({ cartItems, cartId, removeItem }) {
         response?.lines?.edges.forEach((edge) => {
           tempCartCount = tempCartCount + edge.node.quantity;
         });
+
+        // update cartCount
         setCartCount(tempCartCount);
         return response;
       });

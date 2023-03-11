@@ -1,3 +1,5 @@
+// Static Site Generation pre-render for all products in /products/*
+
 import Head from "next/head";
 import ProductPageContent from "@components/ProductPageContent";
 import Header from "@components/Header";
@@ -23,6 +25,7 @@ export default function ProductPage({ product }) {
   );
 }
 
+// Push pre-rendered routes to params array
 export async function getStaticPaths() {
   const products = await getProductList();
   let routes = products.map((p) => {
@@ -33,6 +36,7 @@ export async function getStaticPaths() {
   return { paths: routes, fallback: false };
 }
 
+// Hunt down the correct product in params array with products.find
 export async function getStaticProps({ params }) {
   let products = await getProductList();
 
